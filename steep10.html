@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+    }
+
+    .selector {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .text {
+        font-weight: bold;
+    }
+
+    .class1 {
+        color: orange;
+    }
+
+    .class2 {
+        color: #000;
+        background: yellow;
+    }
+
+    .class3 {
+        color: rgb(136, 206, 103);
+        background: yellow;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div class="selector">
+            Hello, <span class="text">World</span>
+        </div>
+    </div>
+
+    <script>
+        gsap.registerPlugin(TextPlugin)
+
+        // gsap.to('.selector', {
+        //     duration: 2,
+
+        //     // text: 'Привет мир',
+        //     text: {
+        //         value: 'HELLO, wORld',
+        //         // delimiter: '',
+        //         newClass: 'class1',
+        //         // type: 'diff',
+        //     }
+        // });
+        gsap.to('.text', {
+            duration: .5,
+            text: {
+                value: "HTML",
+                newClass: 'class1'
+            }
+        })
+
+        gsap.to('.text', {
+            duration: .5,
+            delay: 2,
+            text: {
+                value: "JavaScript",
+                newClass: 'class2'
+            }
+        })
+
+        gsap.to('.text', {
+            duration: .5,
+            delay: 5,
+
+            text: {
+                value: "Gsap",
+                newClass: 'class3'
+            }
+        })
+    </script>
+</body>
+
+</html>
